@@ -1,0 +1,93 @@
+<!DOCTYPE html>  
+<html>  
+<head>   
+	<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.js"
+  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  crossorigin="anonymous"></script> 
+  <script>  
+  $(document).ready(function(){  
+  	$("#prueba1").on('click', 'input[type="radio"]',function(event){          
+  		//obteniendo el id del elemento presionado 
+  		let id=this.id; 
+  		switch(id){
+  			case "prueba": //capturando los datos  
+  							$("#prueba2").on('click', 'input[type="button"]',function(event){ 
+  								//recibimos el id del elemento seleccionado por el usuario  
+  								let id =this.id;  
+  								var tam=0; 
+  								tam=id.length;  
+  								var numero=id.slice(tam-2,tam); 
+  								var nombreboton=""; 
+  								nombreboton=nombreboton.concat("#","botonarriba",numero);  
+  								console.log(nombreboton);
+  								var boton= document.querySelector(nombreboton); 
+  								boton.style.backgroundColor="green";
+  								nombreboton="";  
+  								nombreboton=nombreboton.concat("#","botonabajo",numero);  
+  								boton= document.querySelector(nombreboton); 
+  								boton.style.backgroundColor="green";
+
+  									
+
+
+  								
+
+  								
+  								
+
+
+
+
+
+
+
+  							});
+  							break; 
+
+
+
+
+
+  		}// fin del switch case
+
+
+  	});
+
+  } 
+
+  	); 
+  </script> 
+  <style type="text/css">  
+  	.boton{ 
+  		background-color: solid gray ; 
+	} 
+	.boton[value=1]{ 
+		background-color:solid blue;
+
+
+	 } 
+
+
+
+
+
+
+  </style>
+
+</head> 
+<body>  
+<div id="prueba1">  
+	<label id="etiqueta"><input type="radio" id="prueba">Boton maestro </label>
+</div> 
+<div id="prueba2">  
+	<label><input type="button" id="botonarriba11" class="boton" >Arriba</label> 
+	<label><input type="button" id="botonabajo11" class="boton"  >Abajo</label> 
+
+</div> 
+
+
+
+
+</body>
+</html>
