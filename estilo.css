@@ -1,12 +1,12 @@
 .principales{ 
 	height: 100px; 
 	width: 1220px; 
-	border: 2px solid blue;
+	
  }  
 .contenedor{ 
 	height: 90px; 
 	width: 600px; 
-	border:2px solid green;
+	
 	
 
 
@@ -16,7 +16,7 @@
 	width:60px; 
 	height:60px;  
 
-	border:2px solid orange; 
+	
 
 
 }
@@ -401,7 +401,7 @@
 	height:100px; 
 	margin-top:520px; 
 	margin-left:260px;
-	border:2px solid red; 
+	
  } 
 
 
