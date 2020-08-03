@@ -12,22 +12,73 @@
       $("#botones").on('click','input[type="radio"]',function(event){  
         let id=this.id; 
         switch(id){
-          case "fractura":
+          case "btfractura":
                           $("#dientes").on('click','input[type="button"]',function(event){ 
                           let id=this.id; 
                           var nomboton="";
                           nomboton=nomboton.concat("#",id); 
-                          $(nomboton).css('background-color','#41B3A3');
-
-
-
-
-
-
+                          $(nomboton).css('background-color','#00FFE4');
                           });
                           break;
 
+          case "btcaries": 
+                           $("#dientes").on('click','input[type="button"]',function(event){ 
+                          let id=this.id; 
+                          var nomboton="";
+                          nomboton=nomboton.concat("#",id); 
+                          $(nomboton).css('background-color','#1B00FF');
+                          });
+                          break; 
+          case "btextraido":
+                          $("#dientes").on('click','input[type="button"]',function(event){ 
+                            let id=this.id; 
+                            var tam=id.length; 
+                            var numero=id.slice(tam-2,tam);
+                            var nomboton=""; 
+                            nomboton=nomboton.concat("#","btcentro",numero); 
+                            $(nomboton).css('background-color','#848484'); 
+                            nomboton=""; 
+                            nomboton=nomboton.concat("#","btizquierda",numero); 
+                            $(nomboton).css('background-color','#848484'); 
+                            nomboton=""; 
+                            nomboton=nomboton.concat("#","btderecha",numero); 
+                            $(nomboton).css('background-color','#848484'); 
+                            nomboton=""; 
+                            nomboton=nomboton.concat("#","btarriba",numero); 
+                            $(nomboton).css('background-color','#848484'); 
+                            nomboton=""; 
+                            nomboton=nomboton.concat("#","btabajo",numero); 
+                            $(nomboton).css('background-color','#848484'); 
 
+                          });
+                          
+                          break; 
+          case "btextraer":
+                          $("#dientes").on('click','input[type="button"]',function(event){ 
+                            let id=this.id; 
+                            var tam=id.length; 
+                            var numero=id.slice(tam-2,tam);
+                            var nomboton=""; 
+                            nomboton=nomboton.concat("#","btcentro",numero); 
+                            $(nomboton).css('background-color','#FF0000'); 
+                            nomboton=""; 
+                            nomboton=nomboton.concat("#","btizquierda",numero); 
+                            $(nomboton).css('background-color','#FF0000'); 
+                            nomboton=""; 
+                            nomboton=nomboton.concat("#","btderecha",numero); 
+                            $(nomboton).css('background-color','#FF0000'); 
+                            nomboton=""; 
+                            nomboton=nomboton.concat("#","btarriba",numero); 
+                            $(nomboton).css('background-color','#FF0000'); 
+                            nomboton=""; 
+                            nomboton=nomboton.concat("#","btabajo",numero); 
+                            $(nomboton).css('background-color','#FF0000'); 
+
+                          });
+
+                          
+                          break; 
+                                          
 
 
         } 
@@ -565,11 +616,26 @@
 
 
 <div   id="botones">   
-  <div id="btfractura"> 
-    <input type="radio" id="fractura"> 
-    <label for="fractura">Fractura</label>
+  <div id="fractura" class="btcomando"> 
+    <input type="radio" id="btfractura"> 
+    <label for="btfractura" >Fractura</label>
+    </div> 
+    <div id="caries" class="btcomando">
+      <input type="radio" id="btcaries"> 
+      <label for="btcaries" >Caries</label>
+      </div>
+      <div id="extraido" class="btcomando">   
+        <input type="radio" id="btextraido"> 
+        <label for="btextraido" >Extraido</label>
+      </div>
+      <div id="extraer" class="btcomando"> 
+        <input type="radio" id="btextraer"> 
+        <label for="btextraer" >Extraer</label>
+      </div>
 
-  </div>
+
+
+</div>
 
 
 </body>
