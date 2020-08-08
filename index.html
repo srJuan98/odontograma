@@ -4,58 +4,83 @@
   <title>test</title> 
   <link rel="stylesheet" type="text/css"  href="estilo.css" media="screen"> 
   <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script> 
+  src="jquery-3.5.1.js"></script>   
+  
+
   <script> 
-    $(document).ready(function(){ 
-      $("#botones").on('click','input[type="radio"]',function(event){  
-        let id=this.id; 
-        $("#btfractura").prop("checked","false"); 
-        $("#btextraido").prop("checked","false");
-        switch(id){
-          case "btfractura":
-                          $("#dientes").on('click','input[type="button"]',function(event){ 
+    function terminar(){
+      
+      $("#dientes").off('click','input[type="button"]');
+
+
+
+    }
+
+
+    function fractura(){ 
+      terminar();
+      $("#dientes").on('click','input[type="button"]',function(event){ 
                           let id=this.id; 
                           var nomboton="";
                           nomboton=nomboton.concat("#",id); 
-                          $(nomboton).css('background-color','#00FFE4');
+                          $(nomboton).css('background-color','#00FAFA');
                           });
-                          break;
 
-          case "btcaries": 
-                           $("#dientes").on('click','input[type="button"]',function(event){ 
+
+
+
+
+    }// fractura 
+
+    function caries(){ 
+      terminar();
+      $("#dientes").on('click','input[type="button"]',function(event){ 
                           let id=this.id; 
                           var nomboton="";
                           nomboton=nomboton.concat("#",id); 
-                          $(nomboton).css('background-color','#1B00FF');
+                          $(nomboton).css('background-color','#6B29D9');
                           });
-                          break; 
-          case "btextraido": 
-                          $("#dientes").on('click','input[type="button"]',function(event){ 
-                          let id=this.id; 
-                          var nomboton="";
-                          nomboton=nomboton.concat("#",id); 
-                          $(nomboton).css('background-color','#848484');
+
+
+
+
+
+    }// caries
+
+    function extraer(){ 
+      terminar(); 
+       $("#dientes").on('click','input[type="button"]',function(event){ 
+                            let id=this.id; 
+                            console.log("id:"+id); 
+                            var tam=id.length; 
+                            var numero=id.slice(tam-2,tam); 
+                            var diente="";
+                            diente=diente.concat("#","dient",numero);  
+                            $(diente).css('background-color','#97FA00'); 
+
                           });
-                          break; 
-                         
-                          
-                          
-          case "btextraer":
-                          $("#dientes").on('click','input[type="button"]',function(event){ 
-                          let id=this.id; 
-                          var nomboton="";
-                          nomboton=nomboton.concat("#",id); 
-                          $(nomboton).css('background-color','#FF0000');
+
+
+
+    }//extraer
+
+
+     function extraido(){ 
+      terminar(); 
+       $("#dientes").on('click','input[type="button"]',function(event){ 
+                            let id=this.id; 
+                            console.log("id:"+id); 
+                            var tam=id.length; 
+                            var numero=id.slice(tam-2,tam); 
+                            var diente="";
+                            diente=diente.concat("#","dient",numero);  
+                            $(diente).css('background-color','#E73775'); 
+
                           });
-                          break; 
-                         
-                                          
 
 
-        } 
 
+    }//extraido
 
 
 
@@ -64,20 +89,13 @@
 
 
 
-
-
-      }); 
-
+   </script> 
 
 
 
 
 
 
-
-
-    });
-  </script>
   </head> 
 <body>  
   <form id="dientes">  
@@ -584,23 +602,29 @@
   </form>
 
 
-<div   id="botones">   
-  <div id="fractura" class="btcomando"> 
-    <input type="radio" id="btfractura"> 
-    <label for="btfractura" >Fractura</label>
-    </div> 
-    <div id="caries" class="btcomando">
-      <input type="radio" id="btcaries"> 
-      <label for="btcaries" >Caries</label>
-      </div>
-      <div id="extraido" class="btcomando">   
-        <input type="radio" id="btextraido"> 
-        <label for="btextraido" >Extraido</label>
-      </div>
-      <div id="extraer" class="btcomando"> 
-        <input type="radio" id="btextraer"> 
-        <label for="btextraer" >Extraer</label>
-      </div>
+<div   id="botones"> 
+
+<div id="bt1" >
+  <input type="radio" name="comando" id="fractura"  onclick="fractura()">
+  <label for="fractura">Fractura</label>
+</div>
+
+
+<div id="bt2" >
+  <input type="radio" name="comando" id="caries" onclick="caries()">
+  <label for="caries">Caries</label>
+</div> 
+
+<div id="bt3" >
+  <input type="radio" name="comando" id="extraer" onclick="extraer()">
+  <label for="extraer">Extraer</label>    
+</div>       
+
+<div id="bt4" >
+  <input type="radio" name="comando" id="extraido" onclick="extraido()">
+  <label for="extraido">Extraido</label>
+</div> 
+
 
 
 

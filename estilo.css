@@ -66,14 +66,7 @@
 	font-weight: bold;
 }
 
-.btcomando{ 
 
-	width:70px; 
-	height:40px; 
-
-
-
- }
 
 
 
@@ -94,7 +87,7 @@
 #dient11{ 
 	position:absolute; 
 	margin-left:530px; 
-	
+
 } 
 
 
@@ -401,116 +394,47 @@
 	height:100px; 
 	margin-top:520px; 
 	margin-left:260px;
+	border:2px solid blue;
 	
  } 
 
+#botones div{ 
+	width:100px;
+	height:40px; 
 
-  
-
-#fractura{ 
-	position:absolute; 
-	margin-left:30px;
-	margin-top:30px; 
-	background-color:#00FFE4;  
-	border:2px #00FFE4;
-
- }  
-
- #fractura input[type="radio"]{  
- 	position:absolute; 
- 	display:none;
-
-
-
-  }
-
-#fractura label{ 
-	position:absolute; 
-	margin-top:10px;
-	margin-left:6px;
-
-
- }
-
-
-
- #caries{ 
- 	position:absolute; 
- 	margin-left:120px; 
- 	margin-top:30px;
- 	background-color:#1B00FF;
- 	border:2px #1B00FF;
 } 
 
- #caries input[type="radio"]{  
- 	position:absolute; 
- 	display:none;
-
-
-
-  }
-
-#caries label{ 
+#bt1{ 
 	position:absolute; 
-	margin-top:10px;
-	margin-left:6px;
+	background-color:#00FAFA;
+
 
 
  }
 
-
-
-#extraido{ 
+#bt2{ 
 	position:absolute; 
-	margin-left:210px; 
-	margin-top:30px;
-	background-color:#848484;
-	border:2px #848484;
+	margin-left:120px;
+	background-color:#6B29D9;  
 
-
- }
-
-#extraido input[type="radio"]{  
- 	position:absolute; 
- 	display:none;
-
-
-
-  }
-
-#extraido label{ 
-	position:absolute; 
-	margin-top:10px;
-	margin-left:6px;
-
-
- }
-
-
-#extraer{ 
-	position:absolute; 
-	margin-left:300px; 
-	margin-top:30px;
-	border:2px #FF0000;
-	background-color:#FF0000;
 
  } 
 
-#extraer input[type="radio"]{  
- 	position:absolute; 
- 	display:none;
 
 
-
-  }
-
-#extraer label{ 
+#bt3{ 
 	position:absolute; 
-	margin-top:10px;
-	margin-left:6px;
+	margin-left:240px;
+	background-color:#97FA00; 
 
 
  }
 
+ #bt4{ 
+	position:absolute; 
+	margin-left:360px;
+	background-color:#E73775; 
 
+
+ }
 
