@@ -404,6 +404,8 @@
 
 } 
 
+
+
 #bt1{ 
 	position:absolute; 
 	background-color:#00FAFA;
@@ -436,5 +438,25 @@
 	background-color:#E73775; 
 
 
- }
+ } 
+
+ #bt5{ 
+ 		position:absolute; 
+ 		margin-top:60px;
+
+
+
+
+  }
+
+ #bt6{ 
+ 		position:absolute; 
+ 		margin-top:60px;
+ 		margin-left:120px;
+
+
+
+
+  }
+
 
