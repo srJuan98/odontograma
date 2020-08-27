@@ -1,337 +1,167 @@
-<!DOCTYPE html> 
-<html>  
-<head>  
-  <title>test</title> 
-  <link rel="stylesheet" type="text/css"  href="estilo.css" media="screen"> 
-  <script
-  src="jquery-3.5.1.js"></script>   
-  
-
-  <script> 
-    function terminar(){
-      
-      $("#dientes").off('click','input[type="button"]');
-
-
-
-    }
-
-
-    function fractura(){ 
-      terminar();
-      $("#dientes").on('click','input[type="button"]',function(event){ 
-                          let id=this.id; 
-                          var nomboton="";
-                          nomboton=nomboton.concat("#",id); 
-                          $(nomboton).css('background-color','#00FAFA');
-                          });
-
-
-
-
-
-    }// fractura 
-
-    function caries(){ 
-      terminar();
-      $("#dientes").on('click','input[type="button"]',function(event){ 
-                          let id=this.id; 
-                          var nomboton="";
-                          nomboton=nomboton.concat("#",id); 
-                          $(nomboton).css('background-color','#6B29D9');
-                          });
-
-
-
-
-
-    }// caries
-
-    function extraer(){ 
-      terminar(); 
-       $("#dientes").on('click','input[type="button"]',function(event){ 
-                            let id=this.id; 
-                            console.log("id:"+id); 
-                            var tam=id.length; 
-                            var numero=id.slice(tam-2,tam); 
-                            var diente="";
-                            diente=diente.concat("#","dient",numero);  
-                            $(diente).css('background-color','#97FA00'); 
-
-                          });
-
-
-
-    }//extraer
-
-
-     function extraido(){ 
-      terminar(); 
-       $("#dientes").on('click','input[type="button"]',function(event){ 
-                            let id=this.id; 
-                        
-                            var tam=id.length; 
-                            var numero=id.slice(tam-2,tam); 
-                            var diente="";
-                            diente=diente.concat("#","dient",numero);  
-                            $(diente).css('background-color','#E73775'); 
-
-                          });
-
-
-
-    }//extraido
-
-    function limpieza(numero){ 
-                            var diente="";
-                            diente=diente.concat("#","dient",numero);  
-                            $(diente).css('background-color',''); 
-                            diente="";
-                            diente=diente.concat("#","btcentro",numero);  
-                            $(diente).css('background-color',''); 
-                            diente="";
-                            diente=diente.concat("#","btizquierda",numero);  
-                            $(diente).css('background-color',''); 
-                            diente="";
-                            diente=diente.concat("#","btderecha",numero);  
-                            $(diente).css('background-color',''); 
-                            diente="";
-                            diente=diente.concat("#","btarriba",numero);  
-                            $(diente).css('background-color',''); 
-                            diente="";
-                            diente=diente.concat("#","btabajo",numero);  
-                            $(diente).css('background-color',''); 
-
-
-
-
-    }//limpieza
-
-
-
-      function limpiar(){ 
-      terminar(); 
-       $("#dientes").on('click','input[type="button"]',function(event){ 
-                            let id=this.id; 
-                            var tam=id.length; 
-                            var numero=id.slice(tam-2,tam); 
-                            console.log(typeof(numero));
-                            limpieza(numero);
-
-
-
-
-
-                          });
-
-
-
-    }//limpiar 
-
-
-    function limpiarodonto(){
-    terminar();
-    var numero=""; 
-    var j;  
-    var k;
-    for(j=1;j<=8;j++){
-  
-       if(j<=4){
-        for(k=1;k<=8;k++){ 
-          numero=""; 
-          numero=numero.concat(j.toString(),k.toString()); 
-          limpieza(numero);
-        }
-
-
-       }
-       else{
-          for(k=1;k<=4;k++){ 
-          numero=""; 
-          numero=numero.concat(j.toString(),k.toString()); 
-          limpieza(numero);
-        }
-
-
-
-       }
-
-
-
-      
-
-    }
-  }
-
-
-
-
-
-
-
-
-   </script> 
-
-
-
-
-
-
-  </head> 
-<body>  
-  <form id="dientes">  
-  <div class="principales"   id="central1">  
-
-    <div class="contenedor" id="contizq1">  
-
-      <div class="diente"  id="dient11"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro11"> 
-        <input type="button" class="btdiente btizquierdadt"id="btizquierda11" >  
-        <input type="button" class="btdiente btderechadt" id="btderecha11">  
-        <input type="button" class="btdiente btarribadt" id="btarriba11">  
-        <input type="button" class="btdiente btabajodt" id="btabajo11"> 
-        <label class="lb">11</label> 
-      </div> 
-    
-      <div class="diente"  id="dient12"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro12"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda12">  
-        <input type="button" class="btdiente btderechadt" id="btderecha12">  
-        <input type="button" class="btdiente btarribadt" id="btarriba12">  
-        <input type="button" class="btdiente btabajodt" id="btabajo12"> 
-        <label class="lb">12</label>  
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test</title>
+  <link rel="stylesheet" type="text/css"  href="estilo.css" media="screen">
+  <script src="jquery-3.5.1.js"></script>
+  <script src="bt.js"></script>
+
+
+  </head>
+<body>
+  <form >
+  <div class="principales"   id="central1">
+
+    <div class="contenedor" id="contizq1">
+
+      <div class="diente"  id="dient11">
+        <input type="button" class="btdiente btcentrodt" id="btcentro11">
+        <input type="button" class="btdiente btizquierdadt"id="btizquierda11" >
+        <input type="button" class="btdiente btderechadt" id="btderecha11">
+        <input type="button" class="btdiente btarribadt" id="btarriba11">
+        <input type="button" class="btdiente btabajodt" id="btabajo11">
+        <label class="lb">11</label>
       </div>
 
-       <div class="diente"  id="dient13"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro13"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda13">  
-        <input type="button" class="btdiente btderechadt" id="btderecha13">  
-        <input type="button" class="btdiente btarribadt" id="btarriba13">  
-        <input type="button" class="btdiente btabajodt" id="btabajo13">  
-        <label class="lb">13</label>  
+      <div class="diente"  id="dient12">
+        <input type="button" class="btdiente btcentrodt" id="btcentro12">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda12">
+        <input type="button" class="btdiente btderechadt" id="btderecha12">
+        <input type="button" class="btdiente btarribadt" id="btarriba12">
+        <input type="button" class="btdiente btabajodt" id="btabajo12">
+        <label class="lb">12</label>
       </div>
 
-      <div class="diente"  id="dient14"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro14"> 
-        <input type="button" class="btdiente btizquierdadt"  id="btcizquierda14">  
-        <input type="button" class="btdiente btderechadt" id="btderecha14">  
-        <input type="button" class="btdiente btarribadt" id="btarriba14">  
-        <input type="button" class="btdiente btabajodt" id="btabajo14">  
-        <label class="lb">14</label>  
+       <div class="diente"  id="dient13">
+        <input type="button" class="btdiente btcentrodt" id="btcentro13">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda13">
+        <input type="button" class="btdiente btderechadt" id="btderecha13">
+        <input type="button" class="btdiente btarribadt" id="btarriba13">
+        <input type="button" class="btdiente btabajodt" id="btabajo13">
+        <label class="lb">13</label>
       </div>
 
-      <div class="diente"  id="dient15"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro15"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda15">  
-        <input type="button" class="btdiente btderechadt" id="btderecha15">  
-        <input type="button" class="btdiente btarribadt" id="btarriba15">  
-        <input type="button" class="btdiente btabajodt" id="btabajo15">  
-        <label class="lb">15</label>  
+      <div class="diente"  id="dient14">
+        <input type="button" class="btdiente btcentrodt" id="btcentro14">
+        <input type="button" class="btdiente btizquierdadt"  id="btcizquierda14">
+        <input type="button" class="btdiente btderechadt" id="btderecha14">
+        <input type="button" class="btdiente btarribadt" id="btarriba14">
+        <input type="button" class="btdiente btabajodt" id="btabajo14">
+        <label class="lb">14</label>
       </div>
 
-      <div class="diente"  id="dient16"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro16"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda16">  
-        <input type="button" class="btdiente btderechadt" id="btderecha16">  
-        <input type="button" class="btdiente btarribadt" id="btarriba16">  
-        <input type="button" class="btdiente btabajodt" id="btabajo16">  
-        <label class="lb">16</label>  
+      <div class="diente"  id="dient15">
+        <input type="button" class="btdiente btcentrodt" id="btcentro15">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda15">
+        <input type="button" class="btdiente btderechadt" id="btderecha15">
+        <input type="button" class="btdiente btarribadt" id="btarriba15">
+        <input type="button" class="btdiente btabajodt" id="btabajo15">
+        <label class="lb">15</label>
       </div>
 
-      <div class="diente"  id="dient17"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro17"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda17">  
-        <input type="button" class="btdiente btderechadt" id="btderecha17">  
-        <input type="button" class="btdiente btarribadt" id="btarriba17">  
-        <input type="button" class="btdiente btabajodt" id="btabajo17">  
-        <label class="lb">17</label>  
+      <div class="diente"  id="dient16">
+        <input type="button" class="btdiente btcentrodt" id="btcentro16">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda16">
+        <input type="button" class="btdiente btderechadt" id="btderecha16">
+        <input type="button" class="btdiente btarribadt" id="btarriba16">
+        <input type="button" class="btdiente btabajodt" id="btabajo16">
+        <label class="lb">16</label>
       </div>
 
-      <div class="diente"  id="dient18"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro18" > 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda18">  
-        <input type="button" class="btdiente btderechadt" id="btderecha18">  
-        <input type="button" class="btdiente btarribadt" id="btarriba18">  
-        <input type="button" class="btdiente btabajodt" id="btabajo18">  
-        <label class="lb">18</label>  
-      </div> 
-      
-    
-    </div> 
-    
-    <div class="contenedor" id="contder1"> 
-       <div class="diente"  id="dient28"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro28"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda28">  
-        <input type="button" class="btdiente btderechadt" id="btderecha28">  
-        <input type="button" class="btdiente btarribadt" id="btarriba28">  
-        <input type="button" class="btdiente btabajodt" id="btabajo28">  
-        <label class="lb">28</label>  
-      </div> 
-    
-      <div class="diente"  id="dient27"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro27"> 
-        <input type="button" class="btdiente btizquierdadt"  id="btizquierda27">  
-        <input type="button" class="btdiente btderechadt" id="btderecha27">  
-        <input type="button" class="btdiente btarribadt" id="btarriba27">  
-        <input type="button" class="btdiente btabajodt" id="btabajo27">  
-        <label class="lb">27</label>  
+      <div class="diente"  id="dient17">
+        <input type="button" class="btdiente btcentrodt" id="btcentro17">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda17">
+        <input type="button" class="btdiente btderechadt" id="btderecha17">
+        <input type="button" class="btdiente btarribadt" id="btarriba17">
+        <input type="button" class="btdiente btabajodt" id="btabajo17">
+        <label class="lb">17</label>
       </div>
 
-       <div class="diente"  id="dient26"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro26" > 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda26">  
-        <input type="button" class="btdiente btderechadt" id="btderecha26">  
-        <input type="button" class="btdiente btarribadt" id="btarriba26">  
-        <input type="button" class="btdiente btabajodt" id="btabajo26">  
-        <label class="lb">26</label>  
+      <div class="diente"  id="dient18">
+        <input type="button" class="btdiente btcentrodt" id="btcentro18" >
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda18">
+        <input type="button" class="btdiente btderechadt" id="btderecha18">
+        <input type="button" class="btdiente btarribadt" id="btarriba18">
+        <input type="button" class="btdiente btabajodt" id="btabajo18">
+        <label class="lb">18</label>
       </div>
 
-      <div class="diente"  id="dient25"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro25"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda25">  
-        <input type="button" class="btdiente btderechadt" id="btderecha25">  
-        <input type="button" class="btdiente btarribadt" id="btarriba25">  
-        <input type="button" class="btdiente btabajodt" id="btabajo25">  
-        <label class="lb">25</label>  
+
+    </div>
+
+    <div class="contenedor" id="contder1">
+       <div class="diente"  id="dient28">
+        <input type="button" class="btdiente btcentrodt" id="btcentro28">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda28">
+        <input type="button" class="btdiente btderechadt" id="btderecha28">
+        <input type="button" class="btdiente btarribadt" id="btarriba28">
+        <input type="button" class="btdiente btabajodt" id="btabajo28">
+        <label class="lb">28</label>
       </div>
 
-      <div class="diente"  id="dient24"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro24"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda24">  
-        <input type="button" class="btdiente btderechadt" id="btderecha24">  
-        <input type="button" class="btdiente btarribadt" id="btarriba24">  
-        <input type="button" class="btdiente btabajodt" id="btabajo24">  
-        <label class="lb">24</label>  
+      <div class="diente"  id="dient27">
+        <input type="button" class="btdiente btcentrodt" id="btcentro27">
+        <input type="button" class="btdiente btizquierdadt"  id="btizquierda27">
+        <input type="button" class="btdiente btderechadt" id="btderecha27">
+        <input type="button" class="btdiente btarribadt" id="btarriba27">
+        <input type="button" class="btdiente btabajodt" id="btabajo27">
+        <label class="lb">27</label>
       </div>
 
-      <div class="diente"  id="dient23"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro23"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda23">  
-        <input type="button" class="btdiente btderechadt" id="btderecha23">  
-        <input type="button" class="btdiente btarribadt" id="btarriba23">  
-        <input type="button" class="btdiente btabajodt" id="btabajo23">  
-        <label class="lb">23</label>  
+       <div class="diente"  id="dient26">
+        <input type="button" class="btdiente btcentrodt" id="btcentro26" >
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda26">
+        <input type="button" class="btdiente btderechadt" id="btderecha26">
+        <input type="button" class="btdiente btarribadt" id="btarriba26">
+        <input type="button" class="btdiente btabajodt" id="btabajo26">
+        <label class="lb">26</label>
       </div>
 
-      <div class="diente"  id="dient22"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro22"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda22">  
-        <input type="button" class="btdiente btderechadt" id="btderecha22">  
-        <input type="button" class="btdiente btarribadt" id="btarriba22">  
-        <input type="button" class="btdiente btabajodt" id="btabajo22">  
-        <label class="lb">22</label>  
+      <div class="diente"  id="dient25">
+        <input type="button" class="btdiente btcentrodt" id="btcentro25">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda25">
+        <input type="button" class="btdiente btderechadt" id="btderecha25">
+        <input type="button" class="btdiente btarribadt" id="btarriba25">
+        <input type="button" class="btdiente btabajodt" id="btabajo25">
+        <label class="lb">25</label>
       </div>
 
-      <div class="diente"  id="dient21"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro21" > 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda21">  
-        <input type="button" class="btdiente btderechadt" id="btderecha21">  
-        <input type="button" class="btdiente btarribadt" id="btarriba21">  
-        <input type="button" class="btdiente btabajodt" id="btabajo21">  
-        <label class="lb">21</label>  
-      </div> 
-      
+      <div class="diente"  id="dient24">
+        <input type="button" class="btdiente btcentrodt" id="btcentro24">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda24">
+        <input type="button" class="btdiente btderechadt" id="btderecha24">
+        <input type="button" class="btdiente btarribadt" id="btarriba24">
+        <input type="button" class="btdiente btabajodt" id="btabajo24">
+        <label class="lb">24</label>
+      </div>
+
+      <div class="diente"  id="dient23">
+        <input type="button" class="btdiente btcentrodt" id="btcentro23">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda23">
+        <input type="button" class="btdiente btderechadt" id="btderecha23">
+        <input type="button" class="btdiente btarribadt" id="btarriba23">
+        <input type="button" class="btdiente btabajodt" id="btabajo23">
+        <label class="lb">23</label>
+      </div>
+
+      <div class="diente"  id="dient22">
+        <input type="button" class="btdiente btcentrodt" id="btcentro22">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda22">
+        <input type="button" class="btdiente btderechadt" id="btderecha22">
+        <input type="button" class="btdiente btarribadt" id="btarriba22">
+        <input type="button" class="btdiente btabajodt" id="btabajo22">
+        <label class="lb">22</label>
+      </div>
+
+      <div class="diente"  id="dient21">
+        <input type="button" class="btdiente btcentrodt" id="btcentro21" >
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda21">
+        <input type="button" class="btdiente btderechadt" id="btderecha21">
+        <input type="button" class="btdiente btarribadt" id="btarriba21">
+        <input type="button" class="btdiente btabajodt" id="btabajo21">
+        <label class="lb">21</label>
+      </div>
+
 
 
 
@@ -341,160 +171,160 @@
   </div>
 
 
-<div class="principales"   id="central2">  
+<div class="principales"   id="central2">
 
-    <div class="contenedor" id="contizq1">  
+    <div class="contenedor" id="contizq1">
 
-      <div class="diente"  id="dient41"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro41"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda41">  
-        <input type="button" class="btdiente btderechadt" id="btderecha41">  
-        <input type="button" class="btdiente btarribadt" id="btarriba41">  
-        <input type="button" class="btdiente btabajodt" id="btabajo41">  
-        <label class="lb">41</label>  
-      </div> 
-    
-      <div class="diente"  id="dient42"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro42"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda42">  
-        <input type="button" class="btdiente btderechadt" id="btderecha42">  
-        <input type="button" class="btdiente btarribadt" id="btarriba42">  
-        <input type="button" class="btdiente btabajodt" id="btabajo42">  
-        <label class="lb">42</label>  
+      <div class="diente"  id="dient41">
+        <input type="button" class="btdiente btcentrodt" id="btcentro41">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda41">
+        <input type="button" class="btdiente btderechadt" id="btderecha41">
+        <input type="button" class="btdiente btarribadt" id="btarriba41">
+        <input type="button" class="btdiente btabajodt" id="btabajo41">
+        <label class="lb">41</label>
       </div>
 
-       <div class="diente"  id="dient43"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro43" > 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda43">  
-        <input type="button" class="btdiente btderechadt" id="btderecha43">  
-        <input type="button" class="btdiente btarribadt" id="btarriba43">  
-        <input type="button" class="btdiente btabajodt" id="btabajo43">  
-        <label class="lb">43</label>  
+      <div class="diente"  id="dient42">
+        <input type="button" class="btdiente btcentrodt" id="btcentro42">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda42">
+        <input type="button" class="btdiente btderechadt" id="btderecha42">
+        <input type="button" class="btdiente btarribadt" id="btarriba42">
+        <input type="button" class="btdiente btabajodt" id="btabajo42">
+        <label class="lb">42</label>
       </div>
 
-      <div class="diente"  id="dient44"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro44"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda44">  
-        <input type="button" class="btdiente btderechadt" id="btderecha44">  
-        <input type="button" class="btdiente btarribadt" id="btarriba44">  
-        <input type="button" class="btdiente btabajodt" id="btabajo44">  
-        <label class="lb">44</label>  
+       <div class="diente"  id="dient43">
+        <input type="button" class="btdiente btcentrodt" id="btcentro43" >
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda43">
+        <input type="button" class="btdiente btderechadt" id="btderecha43">
+        <input type="button" class="btdiente btarribadt" id="btarriba43">
+        <input type="button" class="btdiente btabajodt" id="btabajo43">
+        <label class="lb">43</label>
       </div>
 
-      <div class="diente"  id="dient45"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro45"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda45">  
-        <input type="button" class="btdiente btderechadt" id="btderecha45">  
-        <input type="button" class="btdiente btarribadt" id="btarriba45">  
-        <input type="button" class="btdiente btabajodt" id="btabajo45">  
-        <label class="lb">45</label>  
+      <div class="diente"  id="dient44">
+        <input type="button" class="btdiente btcentrodt" id="btcentro44">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda44">
+        <input type="button" class="btdiente btderechadt" id="btderecha44">
+        <input type="button" class="btdiente btarribadt" id="btarriba44">
+        <input type="button" class="btdiente btabajodt" id="btabajo44">
+        <label class="lb">44</label>
       </div>
 
-      <div class="diente"  id="dient46" > 
-        <input type="button" class="btdiente btcentrodt" id="btcentro46"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda46">  
-        <input type="button" class="btdiente btderechadt" id="btderecha46">  
-        <input type="button" class="btdiente btarribadt" id="btarriba46">  
-        <input type="button" class="btdiente btabajodt" id="btabajo46">  
-        <label class="lb">46</label>  
+      <div class="diente"  id="dient45">
+        <input type="button" class="btdiente btcentrodt" id="btcentro45">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda45">
+        <input type="button" class="btdiente btderechadt" id="btderecha45">
+        <input type="button" class="btdiente btarribadt" id="btarriba45">
+        <input type="button" class="btdiente btabajodt" id="btabajo45">
+        <label class="lb">45</label>
       </div>
 
-      <div class="diente"  id="dient47"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro47"> 
-        <input type="button" class="btdiente btizquierdadt" id="btcizquierda47">  
-        <input type="button" class="btdiente btderechadt" id="btderecha47">  
-        <input type="button" class="btdiente btarribadt" id="btarriba47">  
-        <input type="button" class="btdiente btabajodt" id="btabajo47">  
-        <label class="lb">47</label>  
+      <div class="diente"  id="dient46" >
+        <input type="button" class="btdiente btcentrodt" id="btcentro46">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda46">
+        <input type="button" class="btdiente btderechadt" id="btderecha46">
+        <input type="button" class="btdiente btarribadt" id="btarriba46">
+        <input type="button" class="btdiente btabajodt" id="btabajo46">
+        <label class="lb">46</label>
       </div>
 
-      <div class="diente"  id="dient48"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro48"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda8">  
-        <input type="button" class="btdiente btderechadt" id="btderecha48">  
-        <input type="button" class="btdiente btarribadt" id="btarriba48">  
-        <input type="button" class="btdiente btabajodt" id="btabajo48">  
-        <label class="lb">48</label>  
-
-      </div> 
-      
-    
-    </div> 
-    
-    <div class="contenedor" id="contder1"> 
-       <div class="diente"  id="dient38"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro38"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda38">  
-        <input type="button" class="btdiente btderechadt" id="btderecha38">  
-        <input type="button" class="btdiente btarribadt" id="btarriba38">  
-        <input type="button" class="btdiente btabajodt" id="btabajo38">  
-        <label class="lb">38</label>  
-      </div> 
-    
-      <div class="diente"  id="dient37"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro37"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda37">  
-        <input type="button" class="btdiente btderechadt" id="btderecha37">  
-        <input type="button" class="btdiente btarribadt" id="btarriba37">  
-        <input type="button" class="btdiente btabajodt" id="btabajo37">  
-        <label class="lb">37</label>  
+      <div class="diente"  id="dient47">
+        <input type="button" class="btdiente btcentrodt" id="btcentro47">
+        <input type="button" class="btdiente btizquierdadt" id="btcizquierda47">
+        <input type="button" class="btdiente btderechadt" id="btderecha47">
+        <input type="button" class="btdiente btarribadt" id="btarriba47">
+        <input type="button" class="btdiente btabajodt" id="btabajo47">
+        <label class="lb">47</label>
       </div>
 
-       <div class="diente"  id="dient36"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro36"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda36">  
-        <input type="button" class="btdiente btderechadt" id="btderecha36">  
-        <input type="button" class="btdiente btarribadt" id="btarriba36">  
-        <input type="button" class="btdiente btabajodt" id="btabajo36">  
-        <label class="lb">36</label>  
+      <div class="diente"  id="dient48">
+        <input type="button" class="btdiente btcentrodt" id="btcentro48">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda8">
+        <input type="button" class="btdiente btderechadt" id="btderecha48">
+        <input type="button" class="btdiente btarribadt" id="btarriba48">
+        <input type="button" class="btdiente btabajodt" id="btabajo48">
+        <label class="lb">48</label>
+
       </div>
 
-      <div class="diente"  id="dient35"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro35"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda35">  
-        <input type="button" class="btdiente btderechadt" id="btderecha35">  
-        <input type="button" class="btdiente btarribadt" id="btarriba35">  
-        <input type="button" class="btdiente btabajodt" id="btabajo35">  
-        <label class="lb">35</label>  
+
+    </div>
+
+    <div class="contenedor" id="contder1">
+       <div class="diente"  id="dient38">
+        <input type="button" class="btdiente btcentrodt" id="btcentro38">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda38">
+        <input type="button" class="btdiente btderechadt" id="btderecha38">
+        <input type="button" class="btdiente btarribadt" id="btarriba38">
+        <input type="button" class="btdiente btabajodt" id="btabajo38">
+        <label class="lb">38</label>
       </div>
 
-      <div class="diente"  id="dient34"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro34"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda34">  
-        <input type="button" class="btdiente btderechadt" id="btderecha34">  
-        <input type="button" class="btdiente btarribadt" id="btarriba34">  
-        <input type="button" class="btdiente btabajodt" id="btabajo34">  
-        <label class="lb">34</label>  
+      <div class="diente"  id="dient37">
+        <input type="button" class="btdiente btcentrodt" id="btcentro37">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda37">
+        <input type="button" class="btdiente btderechadt" id="btderecha37">
+        <input type="button" class="btdiente btarribadt" id="btarriba37">
+        <input type="button" class="btdiente btabajodt" id="btabajo37">
+        <label class="lb">37</label>
       </div>
 
-      <div class="diente"  id="dient33"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro33"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda33">  
-        <input type="button" class="btdiente btderechadt" id="btderecha33">  
-        <input type="button" class="btdiente btarribadt" id="btarriba33">  
-        <input type="button" class="btdiente btabajodt" id="btabajo33">  
-        <label class="lb">33</label>  
+       <div class="diente"  id="dient36">
+        <input type="button" class="btdiente btcentrodt" id="btcentro36">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda36">
+        <input type="button" class="btdiente btderechadt" id="btderecha36">
+        <input type="button" class="btdiente btarribadt" id="btarriba36">
+        <input type="button" class="btdiente btabajodt" id="btabajo36">
+        <label class="lb">36</label>
       </div>
 
-      <div class="diente"  id="dient32"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro32"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda32" >  
-        <input type="button" class="btdiente btderechadt" id="btderecha32">  
-        <input type="button" class="btdiente btarribadt" id="btarriba32">  
-        <input type="button" class="btdiente btabajodt" id="btabajo32">  
-        <label class="lb">32</label>  
+      <div class="diente"  id="dient35">
+        <input type="button" class="btdiente btcentrodt" id="btcentro35">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda35">
+        <input type="button" class="btdiente btderechadt" id="btderecha35">
+        <input type="button" class="btdiente btarribadt" id="btarriba35">
+        <input type="button" class="btdiente btabajodt" id="btabajo35">
+        <label class="lb">35</label>
       </div>
 
-      <div class="diente"  id="dient31"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro31"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda31">  
-        <input type="button" class="btdiente btderechadt" id="btderecha31">  
-        <input type="button" class="btdiente btarribadt" id="btarriba31">  
-        <input type="button" class="btdiente btabajodt" id="btabajo31">  
-        <label class="lb">31</label>  
+      <div class="diente"  id="dient34">
+        <input type="button" class="btdiente btcentrodt" id="btcentro34">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda34">
+        <input type="button" class="btdiente btderechadt" id="btderecha34">
+        <input type="button" class="btdiente btarribadt" id="btarriba34">
+        <input type="button" class="btdiente btabajodt" id="btabajo34">
+        <label class="lb">34</label>
+      </div>
 
-      </div> 
-      
+      <div class="diente"  id="dient33">
+        <input type="button" class="btdiente btcentrodt" id="btcentro33">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda33">
+        <input type="button" class="btdiente btderechadt" id="btderecha33">
+        <input type="button" class="btdiente btarribadt" id="btarriba33">
+        <input type="button" class="btdiente btabajodt" id="btabajo33">
+        <label class="lb">33</label>
+      </div>
+
+      <div class="diente"  id="dient32">
+        <input type="button" class="btdiente btcentrodt" id="btcentro32">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda32" >
+        <input type="button" class="btdiente btderechadt" id="btderecha32">
+        <input type="button" class="btdiente btarribadt" id="btarriba32">
+        <input type="button" class="btdiente btabajodt" id="btabajo32">
+        <label class="lb">32</label>
+      </div>
+
+      <div class="diente"  id="dient31">
+        <input type="button" class="btdiente btcentrodt" id="btcentro31">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda31">
+        <input type="button" class="btdiente btderechadt" id="btderecha31">
+        <input type="button" class="btdiente btarribadt" id="btarriba31">
+        <input type="button" class="btdiente btabajodt" id="btabajo31">
+        <label class="lb">31</label>
+
+      </div>
+
 
 
 
@@ -504,85 +334,85 @@
   </div>
 
 
-  <div class="principales"   id="central3">  
+  <div class="principales"   id="central3">
 
-    <div class="contenedor" id="contizq1">  
+    <div class="contenedor" id="contizq1">
 
-      <div class="diente"  id="dient51"> 
-        <input type="button" class="btdiente btcentrodt"  id="btcentro51"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda51">  
-        <input type="button" class="btdiente btderechadt" id="btderecha51">  
-        <input type="button" class="btdiente btarribadt" id="btarriba51">  
-        <input type="button" class="btdiente btabajodt" id="btabajo51"> 
-        <label class="lb">51</label> 
-      </div> 
-    
-      <div class="diente"  id="dient52"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro52"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda52">  
-        <input type="button" class="btdiente btderechadt" id="btderecha52">  
-        <input type="button" class="btdiente btarribadt" id="btarriba2">  
-        <input type="button" class="btdiente btabajodt" id="btabajo52"> 
-        <label class="lb">52</label>  
+      <div class="diente"  id="dient51">
+        <input type="button" class="btdiente btcentrodt"  id="btcentro51">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda51">
+        <input type="button" class="btdiente btderechadt" id="btderecha51">
+        <input type="button" class="btdiente btarribadt" id="btarriba51">
+        <input type="button" class="btdiente btabajodt" id="btabajo51">
+        <label class="lb">51</label>
       </div>
 
-       <div class="diente"  id="dient53"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro53"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda53">  
-        <input type="button" class="btdiente btderechadt" id="btderecha53">  
-        <input type="button" class="btdiente btarribadt" id="btarriba53">  
-        <input type="button" class="btdiente btabajodt" id="btabajo53">  
-        <label class="lb">53</label>  
+      <div class="diente"  id="dient52">
+        <input type="button" class="btdiente btcentrodt" id="btcentro52">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda52">
+        <input type="button" class="btdiente btderechadt" id="btderecha52">
+        <input type="button" class="btdiente btarribadt" id="btarriba2">
+        <input type="button" class="btdiente btabajodt" id="btabajo52">
+        <label class="lb">52</label>
       </div>
 
-      <div class="diente"  id="dient54"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro54"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda54">  
-        <input type="button" class="btdiente btderechadt" id="btderecha54">  
-        <input type="button" class="btdiente btarribadt" id="btarriba54">  
-        <input type="button" class="btdiente btabajodt" id="btabajo54">  
-        <label class="lb">54</label>  
+       <div class="diente"  id="dient53">
+        <input type="button" class="btdiente btcentrodt" id="btcentro53">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda53">
+        <input type="button" class="btdiente btderechadt" id="btderecha53">
+        <input type="button" class="btdiente btarribadt" id="btarriba53">
+        <input type="button" class="btdiente btabajodt" id="btabajo53">
+        <label class="lb">53</label>
       </div>
 
-      
-    
-    </div> 
-    
-    <div class="contenedor" id="contder1"> 
-      <div class="diente"  id="dient61"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro61"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda61">  
-        <input type="button" class="btdiente btderechadt" id="btderecha61">  
-        <input type="button" class="btdiente btarribadt" id="btarriba61">  
-        <input type="button" class="btdiente btabajodt" id="btabajo61"> 
-        <label class="lb">61</label> 
-      </div> 
-    
-      <div class="diente"  id="dient62"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro62"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda62">  
-        <input type="button" class="btdiente btderechadt" id="btderecha62">  
-        <input type="button" class="btdiente btarribadt" id="btarriba62">  
-        <input type="button" class="btdiente btabajodt" id="btabajo62"> 
-        <label class="lb">62</label>  
+      <div class="diente"  id="dient54">
+        <input type="button" class="btdiente btcentrodt" id="btcentro54">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda54">
+        <input type="button" class="btdiente btderechadt" id="btderecha54">
+        <input type="button" class="btdiente btarribadt" id="btarriba54">
+        <input type="button" class="btdiente btabajodt" id="btabajo54">
+        <label class="lb">54</label>
       </div>
 
-       <div class="diente"  id="dient63"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro63"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda63">  
-        <input type="button" class="btdiente btderechadt" id="btderecha63">  
-        <input type="button" class="btdiente btarribadt" id="btarriba63">  
-        <input type="button" class="btdiente btabajodt" id="btabajo63">  
-        <label class="lb">63</label>  
+
+
+    </div>
+
+    <div class="contenedor" id="contder1">
+      <div class="diente"  id="dient61">
+        <input type="button" class="btdiente btcentrodt" id="btcentro61">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda61">
+        <input type="button" class="btdiente btderechadt" id="btderecha61">
+        <input type="button" class="btdiente btarribadt" id="btarriba61">
+        <input type="button" class="btdiente btabajodt" id="btabajo61">
+        <label class="lb">61</label>
       </div>
 
-      <div class="diente"  id="dient64"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro64"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda64">  
-        <input type="button" class="btdiente btderechadt" id="btderecha64">  
-        <input type="button" class="btdiente btarribadt" id="btarriba64">  
-        <input type="button" class="btdiente btabajodt" id="btabajo64">  
-        <label class="lb">64</label>  
+      <div class="diente"  id="dient62">
+        <input type="button" class="btdiente btcentrodt" id="btcentro62">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda62">
+        <input type="button" class="btdiente btderechadt" id="btderecha62">
+        <input type="button" class="btdiente btarribadt" id="btarriba62">
+        <input type="button" class="btdiente btabajodt" id="btabajo62">
+        <label class="lb">62</label>
+      </div>
+
+       <div class="diente"  id="dient63">
+        <input type="button" class="btdiente btcentrodt" id="btcentro63">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda63">
+        <input type="button" class="btdiente btderechadt" id="btderecha63">
+        <input type="button" class="btdiente btarribadt" id="btarriba63">
+        <input type="button" class="btdiente btabajodt" id="btabajo63">
+        <label class="lb">63</label>
+      </div>
+
+      <div class="diente"  id="dient64">
+        <input type="button" class="btdiente btcentrodt" id="btcentro64">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda64">
+        <input type="button" class="btdiente btderechadt" id="btderecha64">
+        <input type="button" class="btdiente btarribadt" id="btarriba64">
+        <input type="button" class="btdiente btabajodt" id="btabajo64">
+        <label class="lb">64</label>
       </div>
 
 
@@ -593,97 +423,101 @@
 
 
 
- <div class="principales"   id="central4">  
+ <div class="principales"   id="central4">
 
-    <div class="contenedor" id="contizq1">  
+    <div class="contenedor" id="contizq1">
 
-      <div class="diente"  id="dient81"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro81"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda81">  
-        <input type="button" class="btdiente btderechadt" id="btderecha81">  
-        <input type="button" class="btdiente btarribadt" id="btarriba81">  
-        <input type="button" class="btdiente btabajodt" id="btabajo81"> 
-        <label class="lb">81</label> 
-      </div> 
-    
-      <div class="diente"  id="dient82"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro82"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda82">  
-        <input type="button" class="btdiente btderechadt" id="btderecha82">  
-        <input type="button" class="btdiente btarribadt" id="btarriba82">  
-        <input type="button" class="btdiente btabajodt" id="btabajo82"> 
-        <label class="lb">82</label>  
+      <div class="diente"  id="dient81">
+        <input type="button" class="btdiente btcentrodt" id="btcentro81">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda81">
+        <input type="button" class="btdiente btderechadt" id="btderecha81">
+        <input type="button" class="btdiente btarribadt" id="btarriba81">
+        <input type="button" class="btdiente btabajodt" id="btabajo81">
+        <label class="lb">81</label>
       </div>
 
-       <div class="diente"  id="dient83"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro83"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda83">  
-        <input type="button" class="btdiente btderechadt" id="btderecha83">  
-        <input type="button" class="btdiente btarribadt" id="btarriba83">  
-        <input type="button" class="btdiente btabajodt" id="btabajo83">  
-        <label class="lb">83</label>  
+      <div class="diente"  id="dient82">
+        <input type="button" class="btdiente btcentrodt" id="btcentro82">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda82">
+        <input type="button" class="btdiente btderechadt" id="btderecha82">
+        <input type="button" class="btdiente btarribadt" id="btarriba82">
+        <input type="button" class="btdiente btabajodt" id="btabajo82">
+        <label class="lb">82</label>
       </div>
 
-      <div class="diente"  id="dient84"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro84"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda84">  
-        <input type="button" class="btdiente btderechadt" id="btderecha84">  
-        <input type="button" class="btdiente btarribadt" id="btarriba84">  
-        <input type="button" class="btdiente btabajodt" id="btabajo84">  
-        <label class="lb">84</label>  
+       <div class="diente"  id="dient83">
+        <input type="button" class="btdiente btcentrodt" id="btcentro83">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda83">
+        <input type="button" class="btdiente btderechadt" id="btderecha83">
+        <input type="button" class="btdiente btarribadt" id="btarriba83">
+        <input type="button" class="btdiente btabajodt" id="btabajo83">
+        <label class="lb">83</label>
       </div>
 
-      
-    
-    </div> 
-    
-    <div class="contenedor" id="contder1"> 
-      <div class="diente"  id="dient71"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro71" > 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda71">  
-        <input type="button" class="btdiente btderechadt" id="btderecha71">  
-        <input type="button" class="btdiente btarribadt" id="btarriba71">  
-        <input type="button" class="btdiente btabajodt" id="btabajo71"> 
-        <label class="lb">71</label> 
-      </div> 
-    
-      <div class="diente"  id="dient72"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro72"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda72">  
-        <input type="button" class="btdiente btderechadt" id="btderecha72">  
-        <input type="button" class="btdiente btarribadt" id="btarriba72">  
-        <input type="button" class="btdiente btabajodt" id="btabajo72"> 
-        <label class="lb">72</label>  
+      <div class="diente"  id="dient84">
+        <input type="button" class="btdiente btcentrodt" id="btcentro84">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda84">
+        <input type="button" class="btdiente btderechadt" id="btderecha84">
+        <input type="button" class="btdiente btarribadt" id="btarriba84">
+        <input type="button" class="btdiente btabajodt" id="btabajo84">
+        <label class="lb">84</label>
       </div>
 
-       <div class="diente"  id="dient73"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro73"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda73">  
-        <input type="button" class="btdiente btderechadt" id="btderecha73">  
-        <input type="button" class="btdiente btarribadt" id="btarriba73">  
-        <input type="button" class="btdiente btabajodt" id="btabajo73">  
-        <label class="lb">73</label>  
+
+
+    </div>
+
+    <div class="contenedor" id="contder1">
+      <div class="diente"  id="dient71">
+        <input type="button" class="btdiente btcentrodt" id="btcentro71" >
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda71">
+        <input type="button" class="btdiente btderechadt" id="btderecha71">
+        <input type="button" class="btdiente btarribadt" id="btarriba71">
+        <input type="button" class="btdiente btabajodt" id="btabajo71">
+        <label class="lb">71</label>
       </div>
 
-      <div class="diente"  id="dient74"> 
-        <input type="button" class="btdiente btcentrodt" id="btcentro74"> 
-        <input type="button" class="btdiente btizquierdadt" id="btizquierda74">  
-        <input type="button" class="btdiente btderechadt" id="btderecha74">  
-        <input type="button" class="btdiente btarribadt" id="btarriba74">  
-        <input type="button" class="btdiente btabajodt" id="btabajo74">  
-        <label class="lb">74</label>  
+      <div class="diente"  id="dient72">
+        <input type="button" class="btdiente btcentrodt" id="btcentro72">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda72">
+        <input type="button" class="btdiente btderechadt" id="btderecha72">
+        <input type="button" class="btdiente btarribadt" id="btarriba72">
+        <input type="button" class="btdiente btabajodt" id="btabajo72">
+        <label class="lb">72</label>
+      </div>
+
+       <div class="diente"  id="dient73">
+        <input type="button" class="btdiente btcentrodt" id="btcentro73">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda73">
+        <input type="button" class="btdiente btderechadt" id="btderecha73">
+        <input type="button" class="btdiente btarribadt" id="btarriba73">
+        <input type="button" class="btdiente btabajodt" id="btabajo73">
+        <label class="lb">73</label>
+      </div>
+
+      <div class="diente"  id="dient74">
+        <input type="button" class="btdiente btcentrodt" id="btcentro74">
+        <input type="button" class="btdiente btizquierdadt" id="btizquierda74">
+        <input type="button" class="btdiente btderechadt" id="btderecha74">
+        <input type="button" class="btdiente btarribadt" id="btarriba74">
+        <input type="button" class="btdiente btabajodt" id="btabajo74">
+        <label class="lb">74</label>
       </div>
 
 
 
 
     </div>
+  </div>
+
+  <div class="principales"  id="central5">
+    <input type="submit"  value="Enviar"  id="enviar" name="enviar">
   </div>
 
   </form>
 
 
-<div   id="botones"> 
+<div   id="botones">
 
 <div id="bt1" >
   <input type="radio" name="comando" id="fractura"  onclick="fractura()">
@@ -694,26 +528,25 @@
 <div id="bt2" >
   <input type="radio" name="comando" id="caries" onclick="caries()">
   <label for="caries">Caries</label>
-</div> 
+</div>
 
 <div id="bt3" >
   <input type="radio" name="comando" id="extraer" onclick="extraer()">
-  <label for="extraer">Extraer</label>    
-</div>       
+  <label for="extraer">Extraer</label>
+</div>
 
 <div id="bt4" >
   <input type="radio" name="comando" id="extraido" onclick="extraido()">
   <label for="extraido">Extraido</label>
-</div> 
-
-<div id="bt5"> 
-  <input type="button" id="limpiardiente" onclick="limpiar()"> 
-  <label for="limpiardiente">Limpiar</label> 
 </div>
 
-<div id="bt6"> 
-  <input type="button" id="limpiarodonto" onclick="limpiarodonto()"> 
-  <label for="limpiarodonto">Limpiar Odontograma</label> 
+<div id="bt5">
+  <input type="button" id="limpiardiente" onclick="limpiar()" value="Limpiar Diente">
+</div>
+
+<div id="bt6">
+  <input type="button" id="limpiarodonto" onclick="limpiarodonto()" value="Limpiar Odontograma" >
+
 </div>
 
 
